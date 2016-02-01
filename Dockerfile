@@ -16,8 +16,6 @@ RUN echo "${CONSUL_SHA256}  /tmp/consul.zip" > /tmp/consul.sha256 \
 ADD https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_web_ui.zip /tmp/webui.zip
 RUN cd /tmp && mkdir /ui && unzip webui.zip -d /ui && rm webui.zip
 
-ADD ./config /config/
-
 EXPOSE 8301 8301/udp 8302 8302/udp 8500
 
 ENTRYPOINT ["/bin/consul"]
