@@ -18,4 +18,6 @@ RUN cd /tmp && mkdir /ui && unzip webui.zip -d /ui && rm webui.zip
 
 EXPOSE 8301 8301/udp 8302 8302/udp 8500
 
-ENTRYPOINT ["/bin/consul"]
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
